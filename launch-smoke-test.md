@@ -6,14 +6,14 @@
 - Environment: `Production`
 - Deployment URL: `https://super-c.vercel.app`
 - Deployment date: `2026-03-30`
-- Deployment commit SHA: `e6a683d1619ff8b0d76fbf2c8a0d81bbe06448f0`
+- Deployment commit SHA: `7218b2fb7c0179c59d803c2feb7b38d7f8acc2ef`
 - Verified by: `Codex`
 
 ## Smoke Test Checklist
 
 - [x] Deployment URL is public and reachable over HTTPS.
-- [x] Homepage `/` returns `200`.
-- [ ] Homepage renders the baseline app, not the default Next.js starter page.
+- [ ] Homepage `/` returns `200`.
+- [ ] Homepage renders the baseline app.
 - [ ] Homepage shows Convex-backed content from `convex/home.ts`.
 - [ ] Optional route `/dashboard` loads as expected for the current baseline.
 - [x] No live secrets were found in tracked files.
@@ -23,9 +23,10 @@
 ### HTTP Checks
 
 ```text
-Verified at: 2026-03-30 10:32:40 WAT
+Verified at: 2026-03-30 11:02:00 WAT
 URL: https://super-c.vercel.app
-GET /: 200 OK
+Latest Vercel deployment status: success
+GET /: 500 Internal Server Error
 GET /dashboard: 500 Internal Server Error
 ```
 
@@ -34,12 +35,12 @@ GET /dashboard: 500 Internal Server Error
 ```text
 Homepage result:
 - Public URL is reachable on Vercel.
-- Live page is not the repo baseline from src/app/page.tsx.
-- Production is still serving an older/default app instead of the Convex-backed homepage.
+- Homepage response body is "Internal Server Error".
+- Baseline Convex-backed homepage is not rendering in production.
 
 Dashboard result:
-- /dashboard does not load successfully in production.
-- Route returned a server error during verification.
+- /dashboard response body is "Internal Server Error".
+- Dashboard does not load successfully in production.
 ```
 
 ## Secrets Review
@@ -66,5 +67,5 @@ Summary:
 ```text
 Deployment URL shared: https://super-c.vercel.app
 Smoke test outcome: FAIL
-Outstanding issue(s): Production does not match the baseline app; /dashboard fails in production.
+Outstanding issue(s): Latest Vercel deployment completed for commit 7218b2f, but both / and /dashboard return 500 in production.
 ```
