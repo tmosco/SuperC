@@ -73,7 +73,7 @@ export default function DashboardPage() {
             <div className="w-full max-w-5xl text-left mt-[-8vh]">
               <div className="mb-14">
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">Welcome back.</h1>
-                <p className="text-zinc-400 text-xl font-light">Here's an overview of your workspace.</p>
+                <p className="text-zinc-400 text-xl font-light">Here&apos;s an overview of your workspace.</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
