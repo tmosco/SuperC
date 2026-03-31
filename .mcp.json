@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "docs/context",
+        "convex",
+        "src",
+        "PROJECT_RULES.md",
+        "AGENTS.md"
+      ]
+    }
+  }
+}
